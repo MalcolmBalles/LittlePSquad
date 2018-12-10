@@ -1,11 +1,15 @@
 package Dimes;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Cards {
-
+Random generator = new Random();
+int min = 0;
+int max = 53;
+ArrayList<String >stock = new ArrayList<String>(54);
 	public Cards(){
-		ArrayList<String >stock = new ArrayList<String>(54);
+
 
 		for (int i = 0; i < 54; i++) {
 			if (i <= 9 && i > 0) {
@@ -52,5 +56,11 @@ public class Cards {
 				stock.add("Joker");
 			}
 		}
+	}
+	public void dealRandom(int cardsToDeal){
+			for(int j = 0; j < 54; j++){
+				String randCard = stock.get(min + generator.nextInt(max - min + 1));
+				stock.remove(randCard);
+			}
 	}
 }
