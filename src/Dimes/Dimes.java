@@ -28,7 +28,7 @@ public class Dimes {
 		deal = 3;	
 	}
 	public void setPlayers() {
-		System.out.println("How many players would you like to participate?");
+		System.out.println("How many players would you like to participate? (Up to six)");
 		players = input.nextInt();
 		dealerMax = players - 1;
 		dealer = dealerMin + generator.nextInt(dealerMax - dealerMin + 1);

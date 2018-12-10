@@ -7,10 +7,11 @@ public class Cards {
 Random generator = new Random();
 int min = 0;
 int max = 53;
-ArrayList<String >stock = new ArrayList<String>(54);
+ArrayList<String > stock = new ArrayList<String>(54);
+ArrayList<String> discard = new ArrayList<String>();
+ArrayList<ArrayList> players = new ArrayList<ArrayList>(6);
+ArrayList<String> hands = new ArrayList<String>();
 	public Cards(){
-
-
 		for (int i = 0; i < 54; i++) {
 			if (i <= 9 && i > 0) {
 				stock.add(Integer.toString(i + 1) + "-Spade");
@@ -57,10 +58,27 @@ ArrayList<String >stock = new ArrayList<String>(54);
 			}
 		}
 	}
+	public void discard(){
+		int randCardPos = min + generator.nextInt(max - min + 1);
+		discard.add(stock.get(randCardPos));
+		stock.remove(randCardPos);
+	}
 	public void dealRandom(int cardsToDeal){
-			for(int j = 0; j < 54; j++){
-				String randCard = stock.get(min + generator.nextInt(max - min + 1));
-				stock.remove(randCard);
+		for(int j = 0; j < 6; j++){
+			for(int n = 0; n < 3; n++){
+				int randCardPos = min + generator.nextInt(max - min + 1);
+				String randCard = stock.get(randCardPos);
+				stock.remove(randCardPos);
+				hands.add(randCard);
 			}
+			players.add(hands);
+			hands.clear();
+		}
+	}
+	public void dispPlayerHands(){
+	for(ArrayList temp: players){
+	
+	}
+	
 	}
 }
