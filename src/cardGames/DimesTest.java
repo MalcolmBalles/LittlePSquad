@@ -1,4 +1,4 @@
-package Dimes;
+package cardGames;
 
 public class DimesTest {
 

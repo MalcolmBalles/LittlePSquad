@@ -1,4 +1,4 @@
-package Dimes;
+package cardGames;
 
 import java.util.ArrayList;
 import java.util.Random;

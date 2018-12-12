@@ -1,22 +1,24 @@
-package Dimes;
+package cardGames;
 
 import java.util.ArrayList;
 import java.util.Random;
 
 public class Cards {
-Random generator = new Random();
-int min = 0;
-int max = 53;
-ArrayList<String > stock = new ArrayList<String>(54);
-ArrayList<String> discard = new ArrayList<String>();
-ArrayList<ArrayList> players = new ArrayList<ArrayList>(6);
-ArrayList<String> hands = new ArrayList<String>();
-	public Cards(){
+	Random generator = new Random();
+	int min = 0;
+	int max = 53;
+	int randCardPos;
+	ArrayList<String> stock = new ArrayList<String>(54);
+	ArrayList<String> discard = new ArrayList<String>();
+	ArrayList<ArrayList> players = new ArrayList<ArrayList>(6);
+	ArrayList<String> hands = new ArrayList<String>();
+
+	public Cards() {
 		for (int i = 0; i < 54; i++) {
 			if (i <= 9 && i > 0) {
 				stock.add(Integer.toString(i + 1) + "-Spade");
-			} else if(i == 0){
-				stock.add("Ace-Spade");	
+			} else if (i == 0) {
+				stock.add("Ace-Spade");
 			} else if (i == 10) {
 				stock.add("Jack-Spade");
 			} else if (i == 11) {
@@ -58,27 +60,37 @@ ArrayList<String> hands = new ArrayList<String>();
 			}
 		}
 	}
-	public void discard(){
+
+	public void discard() {
 		int randCardPos = min + generator.nextInt(max - min + 1);
 		discard.add(stock.get(randCardPos));
 		stock.remove(randCardPos);
+		max -= 1;
 	}
-	public void dealRandom(int cardsToDeal){
-		for(int j = 0; j < 6; j++){
-			for(int n = 0; n < 3; n++){
-				int randCardPos = min + generator.nextInt(max - min + 1);
-				String randCard = stock.get(randCardPos);
-				stock.remove(randCardPos);
-				hands.add(randCard);
+
+	public void dealRandom(int cardsToDeal, int amntPlayers) {
+
+		for (int j = 0; j < amntPlayers; j++) {
+			ArrayList<String> hands = new ArrayList<String>();
+
+			for (int n = 0; n < cardsToDeal; n++) {
+				int rCP = min + generator.nextInt(max - min + 1);
+				hands.add(stock.get(rCP).toUpperCase());
+				stock.remove(rCP);
+				max = max - 1;
+				System.out.println(rCP);
+				System.out.println(stock);
+
 			}
+
 			players.add(hands);
-			hands.clear();
+			System.out.println(players);
 		}
+
 	}
-	public void dispPlayerHands(){
-	for(ArrayList temp: players){
-	
+
+	public ArrayList getPlayerHands() {
+		return players;
 	}
-	
-	}
+
 }
