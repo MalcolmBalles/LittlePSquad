@@ -1,5 +1,7 @@
 package cardGames;
 
+import java.util.Scanner;
+
 public class CardsTest {
 
 	public static void main(String[] args) {
@@ -7,7 +9,6 @@ public class CardsTest {
 		Cards stock = new Cards();
 		stock.discard();
 		stock.dealRandom(3, 2);
-		
 	}
 
 }

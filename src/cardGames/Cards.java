@@ -14,51 +14,60 @@ public class Cards {
 	ArrayList<String> hands = new ArrayList<String>();
 
 	public Cards() {
-		for (int i = 0; i < 54; i++) {
-			if (i <= 9 && i > 0) {
-				stock.add(Integer.toString(i + 1) + "-Spade");
-			} else if (i == 0) {
-				stock.add("Ace-Spade");
-			} else if (i == 10) {
-				stock.add("Jack-Spade");
-			} else if (i == 11) {
-				stock.add("Queen-Spade");
-			} else if (i == 12) {
-				stock.add("King-Spade");
-			} else if (i > 13 && i <= 22) {
-				stock.add(Integer.toString(i - 12) + "-Heart");
-			} else if (i == 13) {
-				stock.add("Ace-Heart");
-			} else if (i == 23) {
-				stock.add("Jack-Heart");
-			} else if (i == 24) {
-				stock.add("Queen-Heart");
-			} else if (i == 25) {
-				stock.add("King-Heart");
-			} else if (i > 26 && i <= 35) {
-				stock.add(Integer.toString(i - 25) + "-Club");
-			} else if (i == 26) {
-				stock.add("Ace-Club");
-			} else if (i == 36) {
-				stock.add("Jack-Club");
-			} else if (i == 37) {
-				stock.add("Queen-Club");
-			} else if (i == 38) {
-				stock.add("King-Club");
-			} else if (i > 39 && i <= 48) {
-				stock.add(Integer.toString(i - 38) + "-Diamond");
-			} else if (i == 39) {
-				stock.add("Ace-Diamond");
-			} else if (i == 49) {
-				stock.add("Jack-Diamond");
-			} else if (i == 50) {
-				stock.add("Queen-Diamond");
-			} else if (i == 51) {
-				stock.add("King-Diamond");
-			} else if (i >= 52) {
-				stock.add("Joker");
-			}
-		}
+		stock.add("Ace-Spade");
+		stock.add("2-Spade");
+		stock.add("3-Spade");
+		stock.add("4-Spade");
+		stock.add("5-Spade");
+		stock.add("6-Spade");
+		stock.add("7-Spade");
+		stock.add("8-Spade");
+		stock.add("9-Spade");
+		stock.add("10-Spade");
+		stock.add("Jack-Spade");
+		stock.add("Queen-Spade");
+		stock.add("King-Spade");
+		stock.add("Ace-Heart");
+		stock.add("2-Heart");
+		stock.add("3-Heart");
+		stock.add("4-Heart");
+		stock.add("5-Heart");
+		stock.add("6-Heart");
+		stock.add("7-Heart");
+		stock.add("8-Heart");
+		stock.add("9-Heart");
+		stock.add("10-Heart");
+		stock.add("Jack-Heart");
+		stock.add("Queen-Heart");
+		stock.add("King-Heart");
+		stock.add("Ace-Club");
+		stock.add("2-Club");
+		stock.add("3-Club");
+		stock.add("4-Club");
+		stock.add("5-Club");
+		stock.add("6-Club");
+		stock.add("7-Club");
+		stock.add("8-Club");
+		stock.add("9-Club");
+		stock.add("10-Club");
+		stock.add("Jack-Club");
+		stock.add("Queen-Club");
+		stock.add("King-Club");
+		stock.add("Ace-Diamond");
+		stock.add("2-Diamond");
+		stock.add("3-Diamond");
+		stock.add("4-Diamond");
+		stock.add("5-Diamond");
+		stock.add("6-Diamond");
+		stock.add("7-Diamond");
+		stock.add("8-Diamond");
+		stock.add("9-Diamond");
+		stock.add("10-Diamond");
+		stock.add("Jack-Diamond");
+		stock.add("Queen-Diamond");
+		stock.add("King-Diamond");
+		
+		
 	}
 
 	public void discard() {
